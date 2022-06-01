@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="UTF-8">
+	<title>TABmenu</title>
+
+
+    <style>
+    html{background-color: #2d3135;}
+
+    .container-s{
+        width: 1320px;
+        margin:0 auto;
+        border: 8px solid gold ;
+        height: 2000px;
+        background-color: white;; 
+    }
+    .result{overflow: scroll;
+        width: 1200px;
+        margin: 50px auto;
+        height: 800px;
+        border: 4px solid grey;  
+    }
+    .btn{
+        overflow: scroll;
+        width:1200px;
+        margin: 60px auto;
+        height: 700px;
+        border: 4px solid grey;  
+        font-size: 30px;
+    }
+    h2.button{
+        background-color:rgb(74, 78, 78);
+        width: 200px; height : 150px; border: 3px solid black; 
+        display: inline; margin:20px 40px; color:aliceblue;
+        font-size: 40px;
+    }
+    h2.button:hover{color :burlywood;}
+    @media screen and (max-width:767px) {
+                .container-s{ width: auto}
+                .sourcecode, .btn{width: auto; float: none;}
+                .result{width: auto;}
+                .btn{font-size: 15px; }
+            }
+                
+/* highlight colors */
+::-moz-selection {
+  background-color: #333;
+  color: white;
+}
+
+::selection {
+  background-color: #333;
+  color: white;
+}
+#tab-menu{overflow: hidden; width:900px; margin:0 auto;}
+.tab-content {
+  display: none;
+  float: left;
+  width: 1000px;
+  height: 200px;
+  border-bottom: 1px solid #ccc;
+  border-left: 1px solid #ccc;
+  background-color: white;
+}
+/* tabs */
+.tabs {border-right: 1px solid #ccc;   background-color: darkgrey; overflow: hidden;}
+.tabs:after {content: "";display: table;clear: both;}
+.tabs input[type=radio] {display: none;}
+.tabs label {
+  display: block;
+  float: left;
+  width: 10%;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-right: none;
+  background-color: #f7f7f7;
+  text-align: center;
+  font-weight: 700;
+  color: coral;
+}
+.tabs label:hover {background-color: white;} /* lable hover 흰색*/
+
+.tabs [id^="tab"]:checked + label { /*누르면 흰색 유지, 글자 색 변함*/
+  border-bottom-color: white;
+  background: white;
+  color: #333;
+}
+
+
+#tab1:checked ~ #tab-content1,
+#tab2:checked ~ #tab-content2,
+#tab3:checked ~ #tab-content3 {
+  display: block;
+}
+</style>
+
+</head>
+<body>  
+    <div class="container-s">
+        
+        <div class="source-code-div">
+        <h1 style = "text-align: center; font-size: 50px;">코드 결과 화면</h1>
+        <div class="result">
+
+  <div id="tab-menu">
+	<h1 class = "tab-text" style="text-align: center;">Lorem Ipsum</h1>
+
+	<div class="tabs">
+		<input type="radio" name="tabs" id="tab1" checked>
+		<label for="tab1">What</label>
+		<input type="radio" name="tabs" id="tab2">
+		<label for="tab2">Why</label>
+		<input type="radio" name="tabs" id="tab3">
+		<label for="tab3">Where </label>
+
+		<div id="tab-content1" class="tab-content">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+            Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+            scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+             essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+              with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+		</div>
+		<div id="tab-content2" class="tab-content">
+            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+             The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, 
+             content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum 
+             as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved 
+             over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+
+		</div>
+		<div id="tab-content3" class="tab-content">
+            Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+             classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin 
+             professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, 
+             consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, 
+             discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum
+              et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
+               very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+		</div>
+	</div>
+
+
+    
+</div>
+
+</div>
+<script>
+  function doDisplay(){
+      var con = document.getElementById("sourcecode");
+      if(con.style.display=='none'){
+          con.style.display = 'block';
+      }else{
+          con.style.display = 'none';
+      }
+  }
+</script>
+<h2 class = "button" id="button" onclick = "doDisplay()">On/Off</h2>
+
+<div class="btn">
+    
+<div id="sourcecode">
+<b>
+<xmp>
+    <!DOCTYPE html>
+    <html>
+        <head>
+        <meta charset="UTF-8">
+        <title>TABmenu</title>
+    
+    
+    <style>
+        
+    /* highlight colors */
+    ::-moz-selection {
+      background-color: #333;
+      color: white;
+    }
+    
+    ::selection {
+      background-color: #333;
+      color: white;
+    }
+    #tab-menu{overflow: hidden; width:900px; margin:0 auto;}
+    .tab-content {
+      display: none;
+      float: left;
+      width: 1000px;
+      height: 200px;
+      border-bottom: 1px solid #ccc;
+      border-left: 1px solid #ccc;
+      background-color: white;
+    }
+    /* tabs */
+    .tabs {border-right: 1px solid #ccc;   background-color: darkgrey; overflow: hidden;}
+    .tabs:after {content: "";display: table;clear: both;}
+    .tabs input[type=radio] {display: none;}
+    .tabs label {
+      display: block;
+      float: left;
+      width: 10%;
+      padding: 1em;
+      border: 1px solid #ccc;
+      border-right: none;
+      background-color: #f7f7f7;
+      text-align: center;
+      font-weight: 700;
+      color: coral;
+    }
+    .tabs label:hover {background-color: white;} /* lable hover 흰색*/
+    
+    .tabs [id^="tab"]:checked + label { /*누르면 흰색 유지, 글자 색 변함*/
+      border-bottom-color: white;
+      background: white;
+      color: #333;
+    }
+    
+    
+    #tab1:checked ~ #tab-content1,
+    #tab2:checked ~ #tab-content2,
+    #tab3:checked ~ #tab-content3 {
+      display: block;
+    }
+    </style>
+    </head>
+    <body>  
+    
+      <div id="tab-menu">
+        <h1 class = "tab-text" style="text-align: center;">Lorem Ipsum</h1>
+    
+        <div class="tabs">
+            <input type="radio" name="tabs" id="tab1" checked>
+            <label for="tab1">What</label>
+            <input type="radio" name="tabs" id="tab2">
+            <label for="tab2">Why</label>
+            <input type="radio" name="tabs" id="tab3">
+            <label for="tab3">Where </label>
+    
+            <div id="tab-content1" class="tab-content">
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. 
+                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and 
+                scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining
+                 essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently
+                  with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+            </div>
+            <div id="tab-content2" class="tab-content">
+                It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                 The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, 
+                 content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum 
+                 as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved 
+                 over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+    
+            </div>
+            <div id="tab-content3" class="tab-content">
+                Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of
+                 classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin 
+                 professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, 
+                 consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, 
+                 discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum
+                  et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics,
+                   very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>
+
+</xmp></b>
+
+</body>
+</html>

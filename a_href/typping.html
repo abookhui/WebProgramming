@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typping</title>
+    
+    <!-------------기본 툴---------------------->
+    <style>
+     html{
+            background-color: #2d3135;
+        }
+        .container-s{
+            width: 1320px;
+            margin:0 auto;
+            border: 8px solid gold ;
+            height: 2000px;
+            background-color: white;; 
+        }
+        .result{overflow: scroll;
+            width: 1200px;
+            margin: 50px auto;
+            height: 800px;
+            border: 4px solid grey;  
+        }
+        .btn{
+            overflow: scroll;
+            width:1200px;
+            margin: 60px auto;
+            height: 700px;
+            border: 4px solid grey;  
+            font-size: 30px;
+        }
+        h2.button{
+            background-color:rgb(74, 78, 78);
+            width: 200px; height : 150px; border: 3px solid black; 
+            display: inline; margin:20px 40px; color:aliceblue;
+
+            font-size: 40px;
+        }
+        h2.button:hover{color :burlywood;}
+        @media screen and (max-width:767px) {
+                    .container-s{ width: auto}
+                    .sourcecode, .btn{width: auto; float: none;}
+                    .result{width: auto;}
+                    .btn{font-size: 15px; }
+                }
+                
+                
+    </style>
+
+
+<!-------------기본 툴E---------------------->
+<style>
+    .container{
+  background-color: wheat;
+  margin:200px auto; 
+      width: 800px;
+  height: 400px;
+
+}
+.container h1{
+  width: 500px;
+  margin: 100px auto;
+
+}
+span.typeText{ 
+    font-size: 1.5em;
+} 
+
+@media screen and (max-width:767px) {
+                  .container {width: 500px; margin: 0px auto;}
+              }
+
+.typeText::after {content: "|"; animation:  blink 1s step-end infinite;}
+@keyframes blink {
+0% {opacity:1;}
+49% {opacity:1;}
+50% {opacity:0;}
+100% {opacity:0;}
+}
+  </style>
+
+
+</head>
+<body>
+    <div class="container-s">
+
+        <div class="source-code-div">
+        <h1 style = "text-align: center; font-size: 50px;">코드 결과 화면</h1>
+        <div class="result">
+            <!--입력-->
+
+            <div class="container">
+                <h1><span class="typeText"></span></h1>
+            </div>  
+        </div>
+            <script>
+              // typing js
+        var typeText = document.querySelector(".typeText")
+        var textArr = ["안녕하세요...", "CSS와 JS를 이용한 Typping effect"]  // list
+        var idx = 0;
+        var isAdding = true, textIndex = 0
+        
+        function Func() {
+          setTimeout(function () {
+            typeText.innerText = textArr[textIndex].slice(0, idx)
+            if (isAdding) {
+              if (idx > textArr[textIndex].length) {
+                isAdding = false
+                setTimeout(function () {
+                  Func()
+                }, 2000)
+                return
+              } 
+              else {
+                idx++
+              }
+            } 
+            else {
+              if (idx === 0) {
+                isAdding = true
+                textIndex = (textIndex + 1) % textArr.length
+              } 
+              else {
+                idx--
+              }
+            }
+            Func()
+          }, isAdding ? 120 : 60)
+        }
+        Func()
+            </script>
+            
+
+
+
+
+        </div>
+        <script>
+          function doDisplay(){
+              var con = document.getElementById("sourcecode");
+              if(con.style.display=='none'){
+                  con.style.display = 'block';
+              }else{
+                  con.style.display = 'none';
+              }
+          }
+      </script>
+        <h2 class = "button" id="button" onclick = "doDisplay()">On/Off</h2>
+
+        <div class="btn">
+            
+        <div id="sourcecode">
+<b>
+
+    
+<xmp>
+
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>typping</title>
+
+  <style>
+    .container{
+    background-color: wheat;
+    margin:200px auto; 
+    width: 800px;
+    height: 400px;}
+    .container h1{
+    width: 500px;
+    margin: 100px auto;
+    }
+
+    @media screen and (max-width:767px) {.container {width: 500px; margin: 0px auto;}}
+
+    .typeText::after {content: "|"; animation:  blink 1s step-end infinite;}
+    @keyframes blink {
+    0% {opacity:1;}
+    49% {opacity:1;}
+    50% {opacity:0;}
+    100% {opacity:0;}
+    }
+  </style>
+
+</head>
+<body>
+
+
+    <div class="container">
+        <h1><span class="typeText"></span></h1></b>
+    </div>  
+
+    <script>
+    // typing js
+var typeText = document.querySelector(".typeText")
+var textArr = ["안녕하세요...", "CSS와 JS를 이용한 Typping effect"]  // list
+var idx = 0;
+var isAdding = true, textIndex = 0
+
+    function Func() {
+        setTimeout(function () {
+        typeText.innerText = textArr[textIndex].slice(0, idx)
+        if (isAdding) {
+            if (idx > textArr[textIndex].length) {
+                isAdding = false
+                setTimeout(function () {
+                    Func()
+                }, 2000)
+                 return
+            } 
+        else { idx++}
+        } 
+        else {
+        if (idx === 0) {
+            isAdding = true
+            textIndex = (textIndex + 1) % textArr.length
+        } 
+        else {
+            idx--
+        }
+        }
+        Func()
+        }, isAdding ? 120 : 60)
+        }
+        Func()
+        </script>
+</body>
+</html>
+</xmp>
+
+</b>
+        </div>
+    </div>
+</div>
+    </div>
+</body>
+</html>

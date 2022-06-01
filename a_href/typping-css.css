@@ -1,0 +1,23 @@
+.container{
+    background-color: wheat;
+    margin:0 auto; width: 900px;
+  
+  }
+
+  .typeText{ 
+      float: right;
+      margin: 150px 140px;
+      font-size: 1.5em;
+  } 
+  
+  .header-img{  float: left;
+  } 
+  .typeText::after {content: "|"; animation:  blink 1s step-end infinite;}
+
+
+@keyframes blink {
+0% {opacity:1;}
+49% {opacity:1;}
+50% {opacity:0;}
+100% {opacity:0;}
+}
